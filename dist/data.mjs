@@ -1,0 +1,20 @@
+// Catalog facts are a dated snapshot, not live inventory.
+export const checkedOn = '2026-10-19';
+export const bikes = [
+ {id:'cf6',shortName:'CF 6',name:'Endurace CF 6',category:'Carbon endurance',color:'#3564cf',price:1699,weight:8.88,frame:'Carbon',fork:'Carbon',seatpost:'Carbon',groupset:'Shimano CUES 2×11',front:[34,50],rear:[11,13,15,17,19,21,23,25,28,32,36],brakes:'Hydraulic disc',rotors:'160 / 160 mm',tyres:'Continental Grand Prix TR',tyreWidth:32,clearance:38,wheels:'DT Swiss Endurance LN',rack:null,fenders:'Canyon DEFEND Fast Fenders',topTube:null,pedals:false,stack:584,reach:392,description:'The lightest of the three. A road-focused platform for longer rides and training.',url:'https://www.canyon.com/en-es/road-bikes/endurance-bikes/endurace/cf/endurace-cf-6/4426.html'},
+ {id:'allroad',shortName:'AllRoad',name:'Endurace AllRoad',category:'Versatile endurance',color:'#c56332',price:1099,weight:10.76,frame:'Aluminium',fork:'Carbon',seatpost:'Aluminium',groupset:'Shimano CUES 2×10',front:[34,50],rear:[11,13,15,17,20,23,26,30,34,39],brakes:'Hydraulic disc',rotors:'160 / 160 mm',tyres:'Schwalbe G-One Comp K-Guard',tyreWidth:35,clearance:40,wheels:'ROAD 25 AL',rack:true,fenders:'Frame mounts',topTube:true,pedals:true,stack:594,reach:397,description:'Road rides, easy dirt and luggage. The lowest price, with two front chainrings.',url:'https://www.canyon.com/en-es/road-bikes/endurance-bikes/endurace/allroad/endurace-allroad/4477.html'},
+ {id:'grizl5',shortName:'Grizl',name:'Grizl 5',category:'Adventure gravel',color:'#27816d',price:1299,weight:11.33,frame:'Aluminium',fork:'Carbon',seatpost:null,groupset:'Shimano CUES 1×11',front:[40],rear:[11,13,15,17,20,23,26,30,36,43,50],brakes:'Hydraulic disc',rotors:'180 / 180 mm',tyres:'Schwalbe G-One RX Performance',tyreWidth:45,clearance:54,wheels:'Alex Rims GVX24P',rack:true,fenders:'Frame mounts',topTube:null,pedals:null,stack:596,reach:404,description:'The easiest climbing gear and the widest tyre clearance. Built around rougher routes.',url:'https://www.canyon.com/en-es/gravel-bikes/adventure/grizl/al/grizl-5/4443.html'}
+];
+export const features = [
+ ['price','Price','Essentials','€'],['weight','Weight · size M','Essentials','kg'],['frame','Frame','Essentials'],['fork','Fork','Essentials'],
+ ['low','Lowest ratio','Gearing'],['high','Highest ratio','Gearing'],['range','Gear range','Gearing','%'],['front','Front chainrings','Gearing','T'],['rear','Cassette teeth','Gearing','T'],['groupset','Groupset','Gearing'],['combinations','Gear combinations','Gearing'],
+ ['brakes','Brakes','Components'],['rotors','Rotors · front / rear','Components'],['wheels','Wheels','Components'],['seatpost','Seatpost','Components'],['pedals','Pedals included','Components'],
+ ['tyres','Stock tyres','Tyres & fit'],['tyreWidth','Stock tyre width','Tyres & fit','mm'],['clearance','Maximum tyre width','Tyres & fit','mm'],['stack','Stack · size M','Tyres & fit','mm'],['reach','Reach · size M','Tyres & fit','mm'],
+ ['rack','Rear rack mounts','Utility'],['fenders','Fender compatibility','Utility'],['topTube','Top tube bag mounts','Utility']
+].map(([id,label,group,unit])=>({id,label,group,unit}));
+export const presets = {
+ essentials:['price','weight','frame','low','high','groupset','brakes','tyreWidth','clearance','rack'],
+ training:['price','weight','low','high','range','groupset','tyres','tyreWidth','stack','reach'],
+ adventure:['price','weight','low','clearance','tyres','rack','fenders','topTube'],
+ all:features.map(f=>f.id)
+};
