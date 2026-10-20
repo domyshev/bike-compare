@@ -13,9 +13,9 @@ assert.equal(limits(byId.grizl5).low,.8);
 assert.equal(limits(byId.cf6).low,34/36);
 assert.equal(limits(byId.allroad).low,34/39);
 assert.equal(limits(byId.allroad).high,limits(byId.cf6).high);
-assert.equal(bikes.flatMap(gears).length,77);
-assert.equal(new Set(bikes.flatMap(gears).map(g=>g.ratio.toFixed(9))).size,47);
+assert.equal(bikes.flatMap(gears).length,101);
+assert.equal(new Set(bikes.flatMap(gears).map(g=>g.ratio.toFixed(9))).size,57);
 for(const p of Object.values(presets))for(const id of p)assert.ok(features.some(f=>f.id===id));
 assert.equal(format(byId.cf6,features.find(f=>f.id==='rack')),'Not verified');
 for(const b of bikes){assert.ok(Array.isArray(b.priceHistory)&&b.priceHistory.length,'price history for '+b.id);for(const [p,d] of b.priceHistory){assert.ok(Number.isInteger(p)&&p>0,'price entry for '+b.id);assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(d),'price date for '+b.id);}assert.equal(b.priceHistory[b.priceHistory.length-1][0],b.price,'latest history price matches catalog price for '+b.id);}
-console.log('Catalog, 77 combinations, 47 unique ratios, formatting and presets passed.');
+console.log('Catalog, 101 combinations, 57 unique ratios, formatting and presets passed.');
